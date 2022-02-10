@@ -1,0 +1,280 @@
+/*Main*/
+main{
+    position: relative;
+    z-index: 4;
+    background: #e8e8e8;
+    .all-projects{
+        .wrapper{
+            position: relative;
+            top: -20px;
+            .thumb{
+                position: relative;
+                display: block;
+                color: #fff;
+                >img{
+                    width: 100%;
+                    display: block;
+                }
+                .thumb-hover{
+                    opacity: 0;
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    background: rgba(0,0,0,0.8);
+                    top: 30px;
+                    right: 30px;
+                    bottom: 30px;
+                    left: 30px;
+                    transition: .15s ease-in-out;
+                    span{
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        margin-bottom: 8px;
+                        transition: .3s ease-in-out;
+                        margin-top: 80px;
+                    }
+                }
+                &:hover .thumb-hover{
+                    opacity: 1;
+                    span{
+                        margin-top: 0;
+                    }
+                }
+                .thumb-txt{
+                    position: absolute;
+                    bottom: 20px;
+                    left: 12px;
+                    h4, h5{
+                        padding: 0;
+                        margin: 0;
+                    }
+                    h4{
+                        font-size: 0.6875rem;
+                    }
+                    h5{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+    .deco{
+        background: {
+            image: url("../img/about_hero.jpg");
+            size: cover;
+            position: center;
+        };
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 50px;
+        .topbar{
+            background: {
+                image: url("../img/topbar.png");
+                position: center;
+            };
+            height: 20px;
+            width: 100%;
+        }
+        .logo{
+            background: {
+                image: url("../img/about_hero_title2.png");
+                size: cover;
+                position: center;
+            };
+            height: 340px;
+        }
+        .btmbar{
+            background: {
+                image: url("../img/btmbar.png");
+                position: center;
+            };
+            height: 20px;
+            width: 100%;
+        }
+    }
+    .about{
+        color: #808080;
+        .wrapper{
+            padding: 0 30px;
+            .meet-you{
+                padding: 40px 0;
+                p{
+                    font-size: 0.8125rem;
+                    line-height: 1.4rem;
+                }
+            }
+        }
+        .worked{
+            margin-bottom: 60px;
+            &>div{
+                display: flex;
+                flex-wrap: wrap;
+                a{
+                    background: #f2f2f2;
+                    width: 24%;
+                    margin: 2px 0 0 2px;
+                    &:hover{
+                        background: #f8f8f8;
+                    }
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .worked-with{
+            margin-bottom: 120px;
+        }
+    }
+}
+@media screen and (min-width: 601px) {
+    main{
+        .all-projects{
+            .wrapper{
+                display: flex;
+                flex-flow: column wrap;
+                .thumb{
+                    width: 50%;
+                }
+
+                .thumb:nth-of-type(1){
+                    order: 1;
+                }
+                .thumb:nth-of-type(2){
+                    order: 7;
+                }
+
+
+                .thumb:nth-of-type(3){
+                    order: 2;
+                }
+                .thumb:nth-of-type(4){
+                    order: 8;
+                }
+
+
+                .thumb:nth-of-type(5){
+                    order: 3;
+                }
+                .thumb:nth-of-type(6){
+                    order: 9;
+                }
+
+
+                .thumb:nth-of-type(7){
+                    order: 4;
+                }
+                .thumb:nth-of-type(8){
+                    order: 10;
+                }
+
+
+                .thumb:nth-of-type(9){
+                    order: 11;
+                }
+                .thumb:nth-of-type(10){
+                    order: 5;
+                }
+
+
+                .thumb:nth-of-type(11){
+                    order: 12;
+                }
+                .thumb:nth-of-type(12){
+                    order: 6;
+                }
+            }
+        }
+        .deco{
+            .logo{
+                background: {
+                    image: url("../img/about_hero_title.png");
+                    size: auto;
+                    repeat: no-repeat;
+                };
+            }
+        }
+        .about{
+            .worked{
+                &>div{
+                    a{
+                        width: 12%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 801px) {
+    main{
+        .all-projects{
+            .wrapper{
+                max-height: 1899px;
+                .thumb{
+                    width: 33.33333%;
+                }
+
+                .thumb:nth-of-type(2){
+                    order: 5;
+                }
+                .thumb:nth-of-type(3){
+                    order: 9;
+                }
+
+
+                .thumb:nth-of-type(4){
+                    order: 2;
+                }
+                .thumb:nth-of-type(5){
+                    order: 6;
+                }
+                .thumb:nth-of-type(6){
+                    order: 10;
+                }
+
+
+                .thumb:nth-of-type(7){
+                    order: 3;
+                }
+                .thumb:nth-of-type(8){
+                    order: 7;
+                }
+                .thumb:nth-of-type(9){
+                    order: 11;
+                }
+
+
+                .thumb:nth-of-type(10){
+                    order: 4;
+                }
+                .thumb:nth-of-type(11){
+                    order: 8;
+                }
+                .thumb:nth-of-type(12){
+                    order: 12;
+                }
+            }
+        }
+        .about{
+            .meet-you{
+                div{
+                    display: flex;
+                    p+p{
+                        margin-left: 30px;
+                    }
+                }
+            }
+            .worked{
+                &>div{
+                    a{
+                        width: 12%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+/*Footer*/
+$colorFooter: #888888;
+
+footer{
+    background: #3d3d3d;
+    color: $colorFooter;
+    text-align: center;
+    padding: 120px 0 160px;
+    figcaption{
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+        a{
+            color: lighten($colorFooter, 15%);
+            position: relative;
+            &:hover{
+                color: #fff;
+                &:after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: -3px;
+                    left: 0;
+                    background: #3cc9c1;
+                    height: 2px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    small{
+        font-size: 0.8125rem;
+    }
+    .social{
+        color: darken($colorFooter, 15%);
+    }
+    .fly{
+        color: #313131;
+        font-size: 1.625rem;
+    }
+}

@@ -1,0 +1,374 @@
+/*sass --watch sass/style.scss:css/style.css*/
+/*Global*/
+body {
+  height: 100%; }
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  width: 100%; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+.social {
+  font-family: FontAwesome; }
+
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px; }
+
+h1, h2 {
+  font-family: 'Bowlby One SC', cursive;
+  font-weight: normal; }
+
+h3, h4, h5, h6, p, a, figcaption {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal; }
+
+h5 {
+  font-size: 0.95rem; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.fly {
+  font-family: 'Seaweed Script', cursive; }
+
+@media screen and (min-width: 601px) {
+  .social {
+    font-size: 1.3rem;
+    margin: 20px 0 80px; }
+    .social a {
+      transition: .1s ease-in-out; }
+      .social a:hover {
+        color: #fff; }
+      .social a + a {
+        margin-left: 15px; } }
+/*Menu*/
+.menu {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 10px; }
+  .menu .logo {
+    display: flex;
+    align-items: center; }
+    .menu .logo h1 {
+      font-size: 1rem;
+      font-weight: normal;
+      margin-left: 10px;
+      visibility: hidden; }
+    .menu .logo img {
+      display: block; }
+  .menu .menu-burger-open {
+    background-image: url("../img/mobile_nav.png");
+    height: 24px;
+    width: 24px; }
+  .menu .navigation {
+    background-image: url("../img/mobile_nav_bg.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 11;
+    top: 0;
+    right: -273px;
+    height: 100vh;
+    width: 273px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: .3s ease-in-out; }
+    .menu .navigation.active {
+      right: 0; }
+    .menu .navigation a {
+      color: #656565;
+      margin-top: 1rem; }
+      .menu .navigation a span {
+        display: none; }
+    .menu .navigation .menu-burger-close {
+      background-image: url("../img/x_grey.png");
+      height: 24px;
+      width: 24px; }
+
+@media screen and (min-width: 601px) {
+  .menu .logo h1 {
+    visibility: visible; }
+  .menu .menu-burger-open {
+    display: none; }
+  .menu .navigation {
+    background: none;
+    position: relative;
+    right: 0;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between; }
+    .menu .navigation a {
+      color: #fff;
+      position: relative; }
+      .menu .navigation a:after {
+        content: '';
+        opacity: 0;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        background: #fff;
+        height: 2px;
+        width: 100%;
+        transition: .2s ease-in-out; }
+      .menu .navigation a:hover:after {
+        opacity: 1; }
+      .menu .navigation a span {
+        display: inline-block; }
+    .menu .navigation .menu-burger-close {
+      display: none; } }
+/*Header*/
+.heading {
+  position: relative;
+  height: 100vh;
+  z-index: 1; }
+  .heading .bg {
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 97vh; }
+    .heading .bg.bg-1 {
+      background-image: url("../img/hero_sins.jpg");
+      background-position: 21% 0%;
+      z-index: 2; }
+    .heading .bg.bg-2 {
+      background-image: url("../img/hero_godzilla.jpg");
+      background-position: center; }
+  .heading .header-txt {
+    width: 100%;
+    padding: 0 1.8rem;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .heading .header-txt h2 {
+      font-size: 2.2rem; }
+    .heading .header-txt h3 {
+      font-size: 1rem; }
+    .heading .header-txt p, .heading .header-txt nav {
+      display: none; }
+
+@media screen and (min-width: 601px) {
+  .heading .header-txt h2 {
+    font-size: 3.8rem; }
+  .heading .header-txt p {
+    display: block;
+    padding: 0 15%; }
+  .heading .header-txt nav {
+    display: block; } }
+/*Main*/
+main {
+  position: relative;
+  z-index: 4;
+  background: #e8e8e8; }
+  main .all-projects .wrapper {
+    position: relative;
+    top: -20px; }
+    main .all-projects .wrapper .thumb {
+      position: relative;
+      display: block;
+      color: #fff; }
+      main .all-projects .wrapper .thumb > img {
+        width: 100%;
+        display: block; }
+      main .all-projects .wrapper .thumb .thumb-hover {
+        opacity: 0;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.8);
+        top: 30px;
+        right: 30px;
+        bottom: 30px;
+        left: 30px;
+        transition: .15s ease-in-out; }
+        main .all-projects .wrapper .thumb .thumb-hover span {
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-bottom: 8px;
+          transition: .3s ease-in-out;
+          margin-top: 80px; }
+      main .all-projects .wrapper .thumb:hover .thumb-hover {
+        opacity: 1; }
+        main .all-projects .wrapper .thumb:hover .thumb-hover span {
+          margin-top: 0; }
+      main .all-projects .wrapper .thumb .thumb-txt {
+        position: absolute;
+        bottom: 20px;
+        left: 12px; }
+        main .all-projects .wrapper .thumb .thumb-txt h4, main .all-projects .wrapper .thumb .thumb-txt h5 {
+          padding: 0;
+          margin: 0; }
+        main .all-projects .wrapper .thumb .thumb-txt h4 {
+          font-size: 0.6875rem; }
+        main .all-projects .wrapper .thumb .thumb-txt h5 {
+          font-size: 1rem; }
+  main .deco {
+    background-image: url("../img/about_hero.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 50px; }
+    main .deco .topbar {
+      background-image: url("../img/topbar.png");
+      background-position: center;
+      height: 20px;
+      width: 100%; }
+    main .deco .logo {
+      background-image: url("../img/about_hero_title2.png");
+      background-size: cover;
+      background-position: center;
+      height: 340px; }
+    main .deco .btmbar {
+      background-image: url("../img/btmbar.png");
+      background-position: center;
+      height: 20px;
+      width: 100%; }
+  main .about {
+    color: #808080; }
+    main .about .wrapper {
+      padding: 0 30px; }
+      main .about .wrapper .meet-you {
+        padding: 40px 0; }
+        main .about .wrapper .meet-you p {
+          font-size: 0.8125rem;
+          line-height: 1.4rem; }
+    main .about .worked {
+      margin-bottom: 60px; }
+      main .about .worked > div {
+        display: flex;
+        flex-wrap: wrap; }
+        main .about .worked > div a {
+          background: #f2f2f2;
+          width: 24%;
+          margin: 2px 0 0 2px; }
+          main .about .worked > div a:hover {
+            background: #f8f8f8; }
+          main .about .worked > div a img {
+            width: 100%; }
+    main .about .worked-with {
+      margin-bottom: 120px; }
+
+@media screen and (min-width: 601px) {
+  main .all-projects .wrapper {
+    display: flex;
+    flex-flow: column wrap; }
+    main .all-projects .wrapper .thumb {
+      width: 50%; }
+    main .all-projects .wrapper .thumb:nth-of-type(1) {
+      order: 1; }
+    main .all-projects .wrapper .thumb:nth-of-type(2) {
+      order: 7; }
+    main .all-projects .wrapper .thumb:nth-of-type(3) {
+      order: 2; }
+    main .all-projects .wrapper .thumb:nth-of-type(4) {
+      order: 8; }
+    main .all-projects .wrapper .thumb:nth-of-type(5) {
+      order: 3; }
+    main .all-projects .wrapper .thumb:nth-of-type(6) {
+      order: 9; }
+    main .all-projects .wrapper .thumb:nth-of-type(7) {
+      order: 4; }
+    main .all-projects .wrapper .thumb:nth-of-type(8) {
+      order: 10; }
+    main .all-projects .wrapper .thumb:nth-of-type(9) {
+      order: 11; }
+    main .all-projects .wrapper .thumb:nth-of-type(10) {
+      order: 5; }
+    main .all-projects .wrapper .thumb:nth-of-type(11) {
+      order: 12; }
+    main .all-projects .wrapper .thumb:nth-of-type(12) {
+      order: 6; }
+  main .deco .logo {
+    background-image: url("../img/about_hero_title.png");
+    background-size: auto;
+    background-repeat: no-repeat; }
+  main .about .worked > div a {
+    width: 12%; } }
+@media screen and (min-width: 801px) {
+  main .all-projects .wrapper {
+    max-height: 1899px; }
+    main .all-projects .wrapper .thumb {
+      width: 33.33333%; }
+    main .all-projects .wrapper .thumb:nth-of-type(2) {
+      order: 5; }
+    main .all-projects .wrapper .thumb:nth-of-type(3) {
+      order: 9; }
+    main .all-projects .wrapper .thumb:nth-of-type(4) {
+      order: 2; }
+    main .all-projects .wrapper .thumb:nth-of-type(5) {
+      order: 6; }
+    main .all-projects .wrapper .thumb:nth-of-type(6) {
+      order: 10; }
+    main .all-projects .wrapper .thumb:nth-of-type(7) {
+      order: 3; }
+    main .all-projects .wrapper .thumb:nth-of-type(8) {
+      order: 7; }
+    main .all-projects .wrapper .thumb:nth-of-type(9) {
+      order: 11; }
+    main .all-projects .wrapper .thumb:nth-of-type(10) {
+      order: 4; }
+    main .all-projects .wrapper .thumb:nth-of-type(11) {
+      order: 8; }
+    main .all-projects .wrapper .thumb:nth-of-type(12) {
+      order: 12; }
+  main .about .meet-you div {
+    display: flex; }
+    main .about .meet-you div p + p {
+      margin-left: 30px; }
+  main .about .worked > div a {
+    width: 12%; } }
+/*Footer*/
+footer {
+  background: #3d3d3d;
+  color: #888888;
+  text-align: center;
+  padding: 120px 0 160px; }
+  footer figcaption {
+    margin-bottom: 40px;
+    font-size: 1.1rem; }
+    footer figcaption a {
+      color: #aeaeae;
+      position: relative; }
+      footer figcaption a:hover {
+        color: #fff; }
+        footer figcaption a:hover:after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          background: #3cc9c1;
+          height: 2px;
+          width: 100%; }
+  footer small {
+    font-size: 0.8125rem; }
+  footer .social {
+    color: #626262; }
+  footer .fly {
+    color: #313131;
+    font-size: 1.625rem; }
+
+/*# sourceMappingURL=style.css.map */
